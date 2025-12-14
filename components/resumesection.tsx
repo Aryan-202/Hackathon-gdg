@@ -33,7 +33,7 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({ title, buttons, icon }) => 
           </div>
           <div className={`grid grid-cols-1 md:grid-cols-${cols} gap-4`}> 
             {buttons.map((button, index) => (
-              <a
+              <a 
                 key={index}
                 href={button.action}
                 className={`flex flex-col items-center justify-center w-full min-h-25 p-4 rounded-lg font-medium text-center text-sm transition duration-200 
