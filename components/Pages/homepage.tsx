@@ -1,4 +1,5 @@
 'use client'
+import { FileUpload } from "../ui/file-upload";
 import React, { useState } from "react";
 const Homepage = () => {
     const [activeTab, setActiveTab] = useState<"upload" | "input">("upload");
@@ -55,15 +56,7 @@ const Homepage = () => {
                 </div>
 
                 {activeTab === "upload" && (
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
-                        <h2 className="text-xl font-bold mb-4">Upload Files</h2>
-                        <p className="text-gray-400 mb-4">
-                            Drag and drop your files here or click the button below to upload.
-                        </p>
-                        <button className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-500">
-                            Choose Files
-                        </button>
-                    </div>
+                    <FileUpload/>
                 )}
 
                 {activeTab === "input" && (
