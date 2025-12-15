@@ -49,9 +49,7 @@ export default function UploadTab({ isDark, onGenerate }: UploadTabProps) {
 
   return (
     <Card 
-      className={`max-w-2xl mx-auto ${
-        isDark ? 'bg-gray-800 border-gray-700' : 'bg-white shadow-xl'
-      }`}
+      className={`max-w-2xl mx-auto `}
     >
       <CardHeader>
         <CardTitle className={isDark ? 'text-white' : ''}>
