@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, DragEvent, ChangeEvent } from 'react';
-import { Upload, Sparkles } from 'lucide-react';
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { useState, DragEvent, ChangeEvent } from "react";
+import { Upload, Sparkles } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 interface UploadTabProps {
   isDark: boolean;
@@ -23,10 +23,10 @@ export default function UploadTab({ isDark, onGenerate }: UploadTabProps) {
   const handleDrag = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    
-    if (e.type === 'dragenter' || e.type === 'dragover') {
+
+    if (e.type === "dragenter" || e.type === "dragover") {
       setDragActive(true);
-    } else if (e.type === 'dragleave') {
+    } else if (e.type === "dragleave") {
       setDragActive(false);
     }
   };
@@ -35,7 +35,7 @@ export default function UploadTab({ isDark, onGenerate }: UploadTabProps) {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
+
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       setUploadedFile(e.dataTransfer.files[0]);
     }
@@ -48,14 +48,14 @@ export default function UploadTab({ isDark, onGenerate }: UploadTabProps) {
   };
 
   return (
-    <Card 
-      className={`max-w-2xl mx-auto `}
+    <Card
+      className={`max-w-2xl mx-auto ${isDark ? "bg-gray-800" : "bg-white"}`}
     >
       <CardHeader>
-        <CardTitle className={isDark ? 'text-white' : ''}>
+        <CardTitle className={isDark ? "text-white" : "text-black"}>
           Upload Your Resume
         </CardTitle>
-        <CardDescription className={isDark ? 'text-gray-400' : ''}>
+        <CardDescription className={isDark ? "text-gray-800" : ""}>
           Upload your existing resume and let AI enhance it
         </CardDescription>
       </CardHeader>
@@ -65,33 +65,33 @@ export default function UploadTab({ isDark, onGenerate }: UploadTabProps) {
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
           onDrop={handleDrop}
-          className={`border-2 border-dashed rounded-lg p-12 text-center transition-all cursor-pointer ${
+          className={`border-2 border-dashed rounded-lg p-12 text-center transition-all ${
             dragActive
-              ? isDark 
-                ? 'border-purple-400 bg-purple-900/20' 
-                : 'border-purple-500 bg-purple-50'
-              : isDark 
-                ? 'border-gray-600 hover:border-gray-500' 
-                : 'border-gray-300 hover:border-gray-400'
+              ? isDark
+                ? "border-purple-400 bg-purple-900/20"
+                : "border-purple-500 bg-purple-50"
+              : isDark
+              ? "border-gray-600 hover:border-gray-500"
+              : "border-gray-300 hover:border-gray-400"
           }`}
         >
-          <Upload 
+          <Upload
             className={`w-16 h-16 mx-auto mb-4 ${
-              isDark ? 'text-gray-400' : 'text-gray-400'
-            }`} 
+              isDark ? "text-gray-400" : "text-gray-400"
+            }`}
           />
           {uploadedFile ? (
             <div>
-              <p 
+              <p
                 className={`text-lg font-semibold mb-2 ${
-                  isDark ? 'text-white' : 'text-gray-900'
+                  isDark ? "text-white" : "text-gray-900"
                 }`}
               >
                 {uploadedFile.name}
               </p>
-              <p 
+              <p
                 className={`text-sm ${
-                  isDark ? 'text-gray-400' : 'text-gray-500'
+                  isDark ? "text-gray-400" : "text-gray-500"
                 }`}
               >
                 File uploaded successfully!
@@ -99,16 +99,16 @@ export default function UploadTab({ isDark, onGenerate }: UploadTabProps) {
             </div>
           ) : (
             <div>
-              <p 
+              <p
                 className={`text-lg font-semibold mb-2 ${
-                  isDark ? 'text-white' : 'text-gray-900'
+                  isDark ? "text-white" : "text-gray-900"
                 }`}
               >
                 Drag and drop your resume here
               </p>
-              <p 
+              <p
                 className={`text-sm ${
-                  isDark ? 'text-gray-400' : 'text-gray-500'
+                  isDark ? "text-gray-400" : "text-gray-500"
                 } mb-4`}
               >
                 Supports PDF, DOC, DOCX files
@@ -122,20 +122,19 @@ export default function UploadTab({ isDark, onGenerate }: UploadTabProps) {
             accept=".pdf,.doc,.docx"
             onChange={handleFileInput}
           />
-          <label htmlFor="file-upload">
-            <Button 
-              asChild 
-              variant="outline" 
-              className={isDark ? 'border-gray-600' : ''}
-            >
-              <span className="cursor-pointer">Browse Files</span>
-            </Button>
-          </label>
+          <Button
+            type="button"
+            variant="outline"
+            className="cursor-pointer border-2! border-purple-600! text-purple-600! hover:bg-purple-50!"
+            onClick={() => document.getElementById("file-upload")?.click()}
+          >
+            Browse Files
+          </Button>
         </div>
         {uploadedFile && (
-          <Button 
+          <Button
             className={`w-full mt-6 ${
-              !isDark ? 'bg-purple-600 hover:bg-purple-700' : ''
+              !isDark ? "bg-purple-600 hover:bg-purple-700 text-white" : ""
             }`}
             size="lg"
             onClick={() => onGenerate(uploadedFile)}
