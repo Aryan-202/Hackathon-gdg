@@ -72,8 +72,8 @@ const ResumeEnhancerSection: React.FC = () => {
           Unlock high-paying roles with our specialized training paths.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <a href="">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-70">
+          <a href="/resume/home">
             <Card
               title="Resume Optimizer"
               subtitle="Detailed, ATS-beating resume analysis and revision tools."
@@ -81,7 +81,7 @@ const ResumeEnhancerSection: React.FC = () => {
               img="https://img.icons8.com/glassmorphism/96/edit-file.png"
             />
           </a>
-          <a href="">
+          <a href="/resume/home">
             <Card
               title="Check for ATS"
               subtitle="Verify Resume with ATS ratings."
@@ -90,7 +90,7 @@ const ResumeEnhancerSection: React.FC = () => {
             />
           </a>
 
-          <a href="">
+          <a href="/resume/home">
             <Card
               title="Resume Creator"
               subtitle="Make a in-general Resume with high ATS rankings."
@@ -99,7 +99,7 @@ const ResumeEnhancerSection: React.FC = () => {
             />
           </a>
         </div>
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <button
             className="cursor-pointer"
             onClick={(e) => handleSmoothScroll(e, "AI Trainer")}
@@ -114,7 +114,7 @@ const ResumeEnhancerSection: React.FC = () => {
         </div>
         <span className="flex justify-center text-gray-300 mt-3">
           More features ahead...
-        </span>
+        </span> */}
       </div>
     </section>
   );
