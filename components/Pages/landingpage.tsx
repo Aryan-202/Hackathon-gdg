@@ -5,6 +5,7 @@ import ResumeEnhancerSection from '../resumesection';
 import AIBasedTrainerSection from '../aibasedtrainersection';
 import Particles from '../Particles';
 import Reveal from '../Anime/Reveal';
+import HeroSectionOne from '../hero-section-demo-1';
 const Landingpage = () => {
   return (
     // Outer div for the entire application wrapper
@@ -26,7 +27,8 @@ const Landingpage = () => {
       
       <main>
         <Reveal>
-          <HeroSection />
+          <HeroSectionOne/>
+          {/* // <HeroSection /> */}
         </Reveal>
         
         <ResumeEnhancerSection />
