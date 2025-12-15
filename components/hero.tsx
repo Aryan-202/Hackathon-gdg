@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const HeroSection: React.FC = () => {
     return (
         <section 
-            className="bg-background pt-20 pb-16 md:pt-32 md:pb-24 text-center min-h-[calc(100vh-64px)] flex items-center justify-center"
+            className=" pt-20 pb-16 md:pt-32 md:pb-24 text-center min-h-[calc(100vh-64px)] flex items-center justify-center"
         >
             <div className="container mx-auto px-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
@@ -22,15 +22,25 @@ const HeroSection: React.FC = () => {
                     </p>
                 </div>
 
-                <a 
-                    href="#accelerators"
-                    className="inline-flex items-center px-8 py-3 text-lg font-semibold bg-primary text-primary-foreground rounded-lg transition duration-300 hover:opacity-90 shadow-xl"
-                >
-                    Explore Accelerators
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </a>
+                <button
+  className="inline-flex items-center px-8 py-3 text-lg font-semibold bg-primary text-primary-foreground rounded-lg transition duration-300 hover:opacity-90 shadow-xl"
+  onClick={(e) => handleSmoothScroll(e, "accelerators")}
+>
+  Explore Accelerators
+  <svg
+    className="w-5 h-5 ml-2"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 9l-7 7-7-7"
+    />
+  </svg>
+</button>
             </div>
         </section>
     );
@@ -53,3 +63,12 @@ const Card = ({ title, subtitle, iconClass }: { title: string, subtitle: string,
 
 export default HeroSection;
 
+const handleSmoothScroll = (
+  e: React.MouseEvent<HTMLButtonElement>,
+  id: string
+): void => {
+  e.preventDefault();
+
+  const anchor = document.getElementById(id);
+  anchor?.scrollIntoView({ behavior: 'smooth' });
+};

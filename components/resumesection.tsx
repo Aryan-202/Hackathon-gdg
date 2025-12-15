@@ -65,7 +65,7 @@ return (
                     <Card 
                         title="Resume Optimizer" 
                         subtitle="Detailed, ATS-beating resume analysis and revision tools." 
-                        iconClass="bg-primary/10"
+                        iconClass="bg-secondary/10"
                         img="https://img.icons8.com/glassmorphism/96/edit-file.png"/>
                     <Card 
                         title="Check for ATS" 
