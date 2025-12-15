@@ -52,7 +52,7 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({ title, buttons, icon }) => 
 
 const ResumeEnhancerSection: React.FC = () => {
 return (
-        <section id="accelerators" className="py-20 bg-muted/50">
+        <section id="ResumeBuilder" className="py-20 ">
             <div className="container mx-auto px-4 max-w-7xl">
                 <h2 className="text-4xl font-extrabold text-foreground mb-4 text-center">
                      Resume Enhancer
@@ -61,7 +61,7 @@ return (
                     Unlock high-paying roles with our specialized training paths.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <Card 
                         title="Resume Optimizer" 
                         subtitle="Detailed, ATS-beating resume analysis and revision tools." 
@@ -80,9 +80,28 @@ return (
                         img="https://img.icons8.com/glassmorphism/96/edit-file.png"
                     />
                 </div>
+                <div className="flex justify-center">
+                  <button  className="cursor-pointer" onClick={(e) => handleSmoothScroll(e, "AI Trainer")}>
+                    <img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/circled-down-2.png" alt="circled-down-2"/>
+                  </button>
+                  
+                </div>
+                <span className="flex justify-center text-gray-300 mt-3">
+                  More features ahead...
+                </span>
             </div>
         </section>
     );
 };
 
 export default ResumeEnhancerSection;   
+
+const handleSmoothScroll = (
+  e: React.MouseEvent<HTMLButtonElement>,
+  id: string
+): void => {
+  e.preventDefault();
+
+  const anchor = document.getElementById(id);
+  anchor?.scrollIntoView({ behavior: "smooth" });
+};
