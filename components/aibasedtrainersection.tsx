@@ -16,7 +16,7 @@ const AIBasedTrainerSection: React.FC = () => {
     return (
         <section id="AI Trainer" className="py-20">
             <div className="container mx-auto px-4 max-w-7xl">
-                <h2 className="text-4xl font-extrabold text-foreground mb-4 text-center">
+                <h2 className="text-6xl font-extrabold text-foreground mb-4 text-center">
                      AI-based Trainer
                 </h2>
                 <p className="text-lg text-muted-foreground mb-12 text-center">

@@ -30,9 +30,10 @@ const Landingpage = () => {
           <HeroSectionOne/>
           {/* // <HeroSection /> */}
         </Reveal>
+        <Reveal><ResumeEnhancerSection /></Reveal>
+        <Reveal><AIBasedTrainerSection /></Reveal>
         
-        <ResumeEnhancerSection />
-        <AIBasedTrainerSection />
+        
       </main>
     </div>
     </>
