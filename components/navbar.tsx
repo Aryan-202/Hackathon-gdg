@@ -48,7 +48,7 @@ const NavBar: React.FC = () => {
     );
 
     return (
-        <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+        <nav className="sselect-none  fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl backdrop-blur-3xl rounded-full flex flex-col md:flex-row items-center justify-between px-6 md:px-10 py-3 md:py-4 z-50  border border-border bg-card/80 dark:bg-card/80 shadow-md">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                 <a href="/" className="text-2xl font-extrabold text-primary">
                     Vplace
