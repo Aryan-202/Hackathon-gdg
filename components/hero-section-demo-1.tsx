@@ -17,26 +17,31 @@ export default function HeroSectionOne() {
         <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       </div> */}
       <div className="px-4 py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
-          {"Land  Your  Dream  Job  with"
-            .split(" ")
-            .map((word, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: index * 0.1,
-                  ease: "easeInOut",
-                }}
-                className="mr-2 inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
-        </h1>
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300 mb-20 ">
+        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-white">
+  {"Land Your Dream Job with Vplace"
+    .split(" ")
+    .map((word, index) => (
+      <motion.span
+        key={index}
+        initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{
+          duration: 0.3,
+          delay: index * 0.1,
+          ease: "easeInOut",
+        }}
+        className={`mr-2 inline-block ${
+          word === "Vplace"
+            ? "text-9xl text-indigo-600 dark:text-indigo-400"
+            : ""
+        }`}
+      >
+        {word}
+      </motion.span>
+    ))}
+</h1>
+
+        {/* <h1 className="relative z-10 mx-auto max-w-4xl text-center text-sm font-bold md:text-4xl lg:text-8xl  mb-20 ">
           {"Vplace"
             .split(" ")
             .map((word, index) => (
@@ -54,7 +59,7 @@ export default function HeroSectionOne() {
                 {word}
               </motion.span>
             ))}
-        </h1>
+        </h1> */}
         
         <motion.p
           initial={{
