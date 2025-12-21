@@ -3,8 +3,9 @@
 import { useState } from "react";
 import ResumeTab from "./ResumeTab";
 import ResumePreviewModal from "./ResumePreviewModal";
-
+// dummy markdown content
 const resumeMarkdown = `
+
 # John Doe
 Software Engineer
 
