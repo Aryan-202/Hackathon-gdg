@@ -57,9 +57,9 @@ const ResumeTab: React.FC<ResumeTabProps> = ({ onView, resumeData, hasResume }) 
       <button
         onClick={onView}
         disabled={!hasResume}
-        className={`px-8 py-2 rounded-lg font-medium transition-all shadow-md w-full max-w-[200px] ${
+        className={`px-8 py-2 rounded-lg font-medium transition-all shadow-md w-full max-w-50 ${
           hasResume
-            ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800'
+            ? 'bg-linear-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800'
             : 'bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
         }`}
       >
