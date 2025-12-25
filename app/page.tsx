@@ -15,7 +15,7 @@ const App = () => {
       {/* VANGUARD FOOTER: Minimalist, Transparent, and Italicized */}
       <footer className="relative z-10 py-12 bg-transparent">
         <div className="container mx-auto px-4">
-          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent mb-8" />
+          <div className="h-px w-full bg-linear-to-r from-transparent via-white/5 to-transparent mb-8" />
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[10px] tracking-[0.5em] text-zinc-600 uppercase font-black italic">
