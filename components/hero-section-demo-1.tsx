@@ -28,11 +28,11 @@ const features = [
 export default function HeroSectionOne() {
   return (
     <div id='hero' className="relative flex items-center justify-center min-h-screen bg-transparent overflow-hidden">
-      <div className="px-4 py-20 mt-10 w-full max-w-7xl z-10">
+      <div className="px-4 py-10 w-full max-w-7xl z-10">
         
         {/* TYPOGRAPHY SECTION */}
         <div className="text-center mb-16 relative">
-          <h2 className="text-8xl md:text-[12rem] font-black text-white/[0.01] absolute -top-24 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
+          <h2 className="text-8xl md:text-[12rem] font-black text-white/1 absolute -top-24 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
             VPLACE
           </h2>
           

@@ -21,7 +21,7 @@ const features = [
 
 const ResumeEnhancerSection: React.FC = () => {
   return (
-    <section id="ResumeBuilder" className="relative py-40 px-6 bg-[#020202]">
+    <section id="ResumeBuilder" className="relative py-40 bg-transparent px-6 ">
       <div className="container mx-auto max-w-7xl">
         
         {/* Vanguard Ghost Header */}
