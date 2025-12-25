@@ -28,15 +28,15 @@ const features = [
 export default function HeroSectionOne() {
   return (
     <div id='hero' className="relative flex items-center justify-center min-h-screen bg-transparent overflow-hidden">
-      <div className="px-4 py-10 w-full max-w-7xl z-10">
+      <div className="px-4 w-full max-w-7xl z-10">
         
         {/* TYPOGRAPHY SECTION */}
-        <div className="text-center mb-16 relative">
-          <h2 className="text-8xl md:text-[12rem] font-black text-white/1 absolute -top-24 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
+        <div className="text-center mb-10 relative">
+          <h2 className="text-6xl md:text-[12rem] font-black text-white/1 absolute -top-24 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
             VPLACE
           </h2>
           
-          <h1 className="relative z-10 mx-auto max-w-4xl text-5xl font-bold tracking-tighter text-white md:text-7xl lg:text-8xl">
+          <h1 className="relative z-10 mx-auto max-w-4xl text-5xl font-bold tracking-tighter text-white md:text-7xl lg:text-6xl">
             {"Land Your Dream Job with"
               .split(" ")
               .map((word, index) => (
@@ -65,14 +65,14 @@ export default function HeroSectionOne() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="mt-8 mx-auto max-w-xl text-lg font-medium text-zinc-500 uppercase tracking-widest"
+            className="mt-3 mx-auto max-w-xl text-lg font-medium text-zinc-500 uppercase tracking-widest"
           >
             Deploy your professional identity with state-of-the-art AI tools.
           </motion.p>
         </div>
 
         {/* VANGUARD FEATURE CARDS */}
-        <section id="features" className="mt-20">
+        <section id="features" className="">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
               <motion.div 
@@ -109,9 +109,9 @@ export default function HeroSectionOne() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.2 }}
-          className="flex justify-center mt-20"
+          className="flex justify-center mt-10"
         >
-          <button className="relative group/btn overflow-hidden px-12 py-5 rounded-2xl bg-transparent border border-white/10 text-zinc-400 font-black text-[12px] tracking-[0.5em] uppercase transition-all duration-300 active:scale-95 hover:border-blue-500/50">
+          <a href="/register" className="relative group/btn overflow-hidden px-12 py-5 rounded-2xl bg-transparent border border-white/10 text-zinc-400 font-black text-[12px] tracking-[0.5em] uppercase transition-all duration-300 active:scale-95 hover:border-blue-500/50">
             <span className="relative z-20 flex items-center justify-center gap-3 group-hover/btn:text-white transition-colors duration-700">
               Get Started <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-2" />
             </span>
@@ -119,11 +119,11 @@ export default function HeroSectionOne() {
               className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
             >
               <div 
-                className="w-0 h-0 bg-blue-600 rounded-full group-hover/btn:w-[300%] group-hover/btn:pt-[300%] transition-all duration-[900ms]" 
+                className="w-0 h-0 bg-blue-600 rounded-full group-hover/btn:w-[300%] group-hover/btn:pt-[300%] transition-all duration-900" 
                 style={{ transitionTimingFunction: 'cubic-bezier(0.8, 0, 0.2, 1)' }} 
               />
             </div>
-          </button>
+          </a>
         </motion.div>
       </div>
     </div>

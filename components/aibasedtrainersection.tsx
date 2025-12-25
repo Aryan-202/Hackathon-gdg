@@ -16,12 +16,12 @@ const trainerFeatures = [
 
 const AIBasedTrainerSection: React.FC = () => {
   return (
-    <section id="AI Trainer" className="relative py-40 px-6 bg-transparent">
+    <section id="AI Trainer" className="relative py-20 px-6 bg-transparent">
       <div className="container mx-auto max-w-7xl">
         
         {/* Vanguard Ghost Header */}
-        <div className="mb-28 text-center relative">
-          <h2 className="text-8xl md:text-9xl font-black text-white/[0.01] absolute -top-16 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
+        <div className="mb-14 text-center relative">
+          <h2 className="text-8xl md:text-9xl font-black text-white/5 absolute -top-16 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
             TRAINER
           </h2>
           <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter relative z-10">

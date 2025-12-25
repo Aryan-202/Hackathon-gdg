@@ -26,7 +26,7 @@ const ResumeEnhancerSection: React.FC = () => {
         
         {/* Vanguard Ghost Header */}
         <div className="mb-28 text-center relative">
-          <h2 className="text-8xl md:text-9xl font-black text-white/[0.01] absolute -top-16 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
+          <h2 className="text-8xl md:text-9xl font-black text-white/5 absolute -top-16 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
             VANGUARD
           </h2>
           <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter relative z-10">
