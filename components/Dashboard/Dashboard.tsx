@@ -12,11 +12,10 @@ import {
   IconSettings,
   IconLogout,
   IconHome,
+  IconScoreboard,
 } from "@tabler/icons-react";
 import { img } from "motion/react-client";
-// import LetterV from "../../public/LetterV.png";
-
-/* ---------------- Sidebar Content ---------------- */
+import Particles from "../Particles";
 
 const AppSidebar = () => {
   const { open } = useSidebar();
@@ -25,16 +24,11 @@ const AppSidebar = () => {
     <SidebarBody className="h-screen justify-between">
       {/* Top */}
       <div className="flex flex-col gap-8">
-        
         {/* Brand */}
         <div className="flex items-center">
           {/* Static logo */}
           <div className="h-8 w-8 shrink-0 flex items-center justify-center rounded-md bg-purple-600">
-            <img
-              src="/letter-v.svg"
-              alt="VPlace Logo"
-              className="h-5 w-5"
-            />
+            <img src="/letter-v.svg" alt="VPlace Logo" className="h-5 w-5" />
           </div>
 
           {/* Animated text (no layout shift) */}
@@ -42,9 +36,11 @@ const AppSidebar = () => {
             className={`
               ml-2 text-lg font-semibold whitespace-nowrap
               transition-all duration-200 ease-out
-              ${open
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-2 pointer-events-none"}
+              ${
+                open
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-2 pointer-events-none"
+              }
             `}
           >
             Vplace
@@ -62,9 +58,9 @@ const AppSidebar = () => {
           />
           <SidebarLink
             link={{
-              label: "Profile",
-              href: "/profile",
-              icon: <IconUser className="h-5 w-5" />,
+              label: "ATS",
+              href: "/ats",
+              icon: <IconScoreboard className="h-5 w-5" />,
             }}
           />
           <SidebarLink
@@ -98,9 +94,11 @@ const AppSidebar = () => {
           className={`
             ml-2 text-sm font-medium whitespace-nowrap
             transition-all duration-200 ease-out
-            ${open
-              ? "opacity-100 translate-x-0"
-              : "opacity-0 -translate-x-2 pointer-events-none"}
+            ${
+              open
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-2 pointer-events-none"
+            }
           `}
         >
           Manu Arora
@@ -117,44 +115,58 @@ const Dashboard: React.FC = () => {
   const [resumeMarkdown, setResumeMarkdown] = useState("");
 
   return (
-    <Sidebar>
-      <div className="flex min-h-screen bg-linear-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
-        {/* Sidebar */}
-        <AppSidebar />
+    <><div className="fixed inset-0 -z-10">
+  <Particles
+    particleColors={['#ffffff', '#ffffff']}
+    particleCount={200}
+    particleSpread={10}
+    speed={0.01}
+    particleBaseSize={100}
+    moveParticlesOnHover
+    alphaParticles={false}
+    disableRotation={false}
+  />
+</div>
+      <Sidebar>
+        
+        <div className="flex min-h-screen bg-transparent ">
+          {/* Sidebar */}
+          <AppSidebar />
 
-        {/* Dashboard Content (UNCHANGED) */}
-        <div className="flex-1 p-8">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8 text-foreground">
-              <span className="text-purple-600 dark:text-purple-400">
-                VPlace
-              </span>
-            </h1>
-
-            <div className="bg-muted/50 dark:bg-muted/30 rounded-3xl p-8 shadow-lg border border-border">
-              <h1 className="text-2xl font-semibold mb-6 text-foreground">
-                Your Generated Resume
+          {/* Dashboard Content (UNCHANGED) */}
+          <div className="flex-1 p-8">
+            <div className="max-w-7xl mx-auto">
+              <h1 className="text-4xl font-bold mb-8 text-foreground">
+                <span className="text-purple-600 dark:text-purple-400">
+                  VPlace
+                </span>
               </h1>
 
-              <div className="flex gap-6">
-                <ResumeTab
-                  onView={() => setShowModal(true)}
-                  resumeData={resumeMarkdown}
-                  hasResume={!!resumeMarkdown}
-                />
-                <div className="flex-1" />
-              </div>
-            </div>
+              <div className="backdrop-blur-2xl bg-gray-300/5 rounded-3xl p-8 shadow-lg border border-border">
+                <h1 className="text-2xl font-semibold mb-6 text-foreground">
+                  Your Generated Resume
+                </h1>
 
-            <ResumePreviewModal
-              open={showModal}
-              onClose={() => setShowModal(false)}
-              markdown={resumeMarkdown}
-            />
+                <div className="flex gap-6">
+                  <ResumeTab
+                    onView={() => setShowModal(true)}
+                    resumeData={resumeMarkdown}
+                    hasResume={!!resumeMarkdown}
+                  />
+                  <div className="flex-1" />
+                </div>
+              </div>
+
+              <ResumePreviewModal
+                open={showModal}
+                onClose={() => setShowModal(false)}
+                markdown={resumeMarkdown}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </Sidebar>
+      </Sidebar>
+    </>
   );
 };
 

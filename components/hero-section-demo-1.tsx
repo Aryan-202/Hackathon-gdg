@@ -83,7 +83,7 @@ export default function HeroSectionOne() {
                 className="group relative p-8 rounded-[2rem] bg-[#080808] border border-white/5 transition-all duration-500 overflow-hidden cursor-default"
               >
                 {/* BLUE RAINBOW BORDER */}
-                <div className="absolute inset-0 rounded-[2rem] p-[1.5px] bg-gradient-to-br from-blue-600 via-cyan-400 to-indigo-800 opacity-10 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 rounded-[2rem] p-[1.5px] bg-linear-to-br from-blue-600 via-cyan-400 to-indigo-800 opacity-10 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="h-full w-full bg-[#080808] rounded-[1.9rem]" />
                 </div>
 
