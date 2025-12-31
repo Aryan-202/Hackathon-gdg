@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FileText, Mic, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 // import NavBar from "../navbar"; // Assuming you want the navbar included
-import LightRays from  "./LightRays"; // Keeping the background effect
+import LightRays from  "../LightRays"; // Keeping the background effect
 
 
 const FeatureSelectionPage = () => {
@@ -33,7 +33,7 @@ const FeatureSelectionPage = () => {
           {/* --- HERO SECTION --- */}
           <div className="mb-24 text-center relative z-10">
             {/* Ghost Text Layer */}
-            <h2 className="text-7xl md:text-[10rem] font-black text-white/[0.03] absolute -top-20 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter w-full">
+            <h2 className="text-7xl md:text-[10rem] font-black text-white/3 absolute -top-20 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter w-full">
               DOMINATE
             </h2>
             
@@ -75,7 +75,7 @@ const FeatureSelectionPage = () => {
               title="AI INTERVIEW COACH"
               description="Simulate high-pressure interview scenarios with real-time biometric and vocal feedback."
               icon={<Mic className="w-8 h-8" />}
-              href="/interview" // Adjust link as needed
+              href="/trainer/interview" // Adjust link as needed
               buttonText="Start Simulation"
               delay={0.4}
             />
