@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FileText, Mic, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 // import NavBar from "../navbar"; // Assuming you want the navbar included
-import LightRays from  "./LightRays"; // Keeping the background effect
+import LightRays from  "../LightRays"; // Keeping the background effect
 
 
 const FeatureSelectionPage = () => {
