@@ -44,7 +44,7 @@ export default function SignupFormDemo() {
             type="submit"
             onClick={() =>
               signIn("google", {
-                callbackUrl: "/resume/home",
+                callbackUrl: "/welcome",
               })
             }
           >
