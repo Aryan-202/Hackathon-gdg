@@ -1,14 +1,12 @@
-"use client";
 import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 
-const page = () => {
+const MockTest = () => {
   return (
     <SessionProvider>
-      <div>Mock Test Page</div>
+        <div>Mock Test Page</div>
     </SessionProvider>
-    
   )
 }
 
-export default page
+export default MockTest
