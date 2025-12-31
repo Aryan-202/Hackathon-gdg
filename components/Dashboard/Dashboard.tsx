@@ -1,5 +1,5 @@
 "use client";
-
+import { signOut } from "next-auth/react";
 import React, { useState, useEffect } from "react";
 import ResumeTab from "./ResumeTab";
 import ResumePreviewModal from "./ResumePreviewModal";
@@ -66,13 +66,13 @@ const AppSidebar = () => {
               icon: <IconSettings className="h-5 w-5 shrink-0" />,
             }}
           />
-          <SidebarLink
-            link={{
-              label: "Logout",
-              href: "/api/auth/signout",
-              icon: <IconLogout className="h-5 w-5 shrink-0" />,
-            }}
-          />
+          <button
+            onClick={() => signOut()}
+            className="flex items-center gap-2 text-gray-300 hover:text-white transition"
+          >
+            <IconLogout className="h-5 w-5 shrink-0" />
+            <span>Logout</span>
+          </button>
         </div>
       </div>
 
