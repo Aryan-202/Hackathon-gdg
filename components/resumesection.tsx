@@ -28,12 +28,15 @@ const ResumeEnhancerSection: React.FC = () => {
       <div className="container mx-auto max-w-7xl">
         
         {/* Vanguard Ghost Header - FIXED */}
-        <div className="mb-28 text-center relative">
+        <div className="mb-20 text-center relative">
           <h2 className="text-7xl md:text-[10rem] font-black text-white/3 absolute -top-20 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter w-full">
           </h2>
           <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter relative z-10">
             RESUME <span className="text-blue-500 font-black italic">ENHANCER</span>
           </h2>
+            <p className="text-lg text-zinc-500 mt-6 max-w-2xl mx-auto font-medium">
+            Enhance your career with ATS-friendly resumes, an AI-powered resume generator, and advanced resume enhancement tools.
+            </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

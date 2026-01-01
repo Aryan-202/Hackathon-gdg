@@ -24,11 +24,11 @@ const AIBasedTrainerSection: React.FC = () => {
           <h2 className="text-8xl md:text-9xl font-black text-white/5 absolute -top-16 left-1/2 -translate-x-1/2 uppercase italic select-none tracking-tighter">
           </h2>
           <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter relative z-10">
-            AI-BASED <span className="text-blue-500 font-black italic"></span>
+            AI-TRAINER <span className="text-blue-500 font-black italic"></span>
           </h2>
-          <p className="text-lg text-zinc-500 mt-6 max-w-2xl mx-auto font-medium">
-            Unlock high-paying roles with our specialized training paths.
-          </p>
+            <p className="text-lg text-zinc-500 mt-6 max-w-2xl mx-auto font-medium">
+            Master your skills with AI-driven mock tests and human-based video conferencing interviews.
+            </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -61,9 +61,9 @@ const AIBasedTrainerSection: React.FC = () => {
 
               {/* THE "HEAVY START" REVEAL RIPPLE BUTTON */}
               <button className="relative group/btn overflow-hidden w-full py-6 rounded-2xl bg-transparent border border-white/10 text-zinc-400 font-black text-[10px] tracking-[0.4em] uppercase transition-all duration-300 active:scale-95 hover:border-blue-500/50">
-                <span className="relative z-20 flex items-center justify-center gap-2 transition-colors duration-700 group-hover/btn:text-white">
+                <a href="/login" className="relative z-20 flex items-center justify-center gap-2 transition-colors duration-700 group-hover/btn:text-white">
                   Begin Training <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-2" />
-                </span>
+                </a>
                 
                 {/* THE RIPPLE FILL: Slow start cubic-bezier */}
                 <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
