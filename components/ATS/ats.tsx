@@ -44,7 +44,7 @@ const Ats = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-8">
+    <div className="min-h-screen bg-transparent text-foreground p-8">
       <div className="max-w-6xl mx-auto space-y-8">
 
         {/* Header */}
@@ -54,8 +54,7 @@ const Ats = () => {
             Match your resume against company requirements
           </p>
         </div>
-
-        {/* Input Tabs */}
+`
         <Card className="bg-card/80 backdrop-blur border-border">
           <CardHeader>
             <CardTitle>Input Details</CardTitle>
@@ -68,7 +67,6 @@ const Ats = () => {
                 <TabsTrigger value="resume">Upload Resume</TabsTrigger>
               </TabsList>
 
-              {/* Job Description */}
               <TabsContent value="jd">
                 <Textarea
                   placeholder="Paste the job description here..."
@@ -78,7 +76,6 @@ const Ats = () => {
                 />
               </TabsContent>
 
-              {/* Drag & Drop Resume */}
               <TabsContent value="resume">
                 <div
                   onDragOver={(e) => {

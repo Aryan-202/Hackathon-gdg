@@ -26,23 +26,11 @@ export default function Homepage() {
 
   return (
     <>
-  <div className="fixed inset-0 -z-10 pointer-events-none">
-        <Particles
-          particleColors={["#ffffff"]}
-          particleCount={200}
-          particleSpread={10}
-          speed={0.01}
-          particleBaseSize={100}
-          moveParticlesOnHover
-          alphaParticles={false}
-          disableRotation={false}
-        />
-      </div>
+ 
 
     <div 
       className={`min-h-screen transition-colors duration-300 `}
     >
-      {/* <Header isDark={isDark} setIsDark={setIsDark} /> */}
       <HeroSection isDark={isDark} />
       <TabSelector 
         activeTab={activeTab} 
