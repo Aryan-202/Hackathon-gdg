@@ -101,7 +101,7 @@ export default function ManualTab({ isDark, onGenerate }: ManualTabProps) {
         );
         onGenerate(formData);
         // Redirect to dashboard after successful generation
-        window.location.href = "/resume/dashboard";
+        window.location.href = "/resume/generated-resume";
       } else {
         alert("Failed to generate resume: " + data.error);
       }
@@ -124,7 +124,6 @@ export default function ManualTab({ isDark, onGenerate }: ManualTabProps) {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-8">
-        {/* Personal Information */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-gray-200">
             <User className="w-6 h-6" />
@@ -163,7 +162,6 @@ export default function ManualTab({ isDark, onGenerate }: ManualTabProps) {
           </div>
         </div>
 
-        {/* Contact Information */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-gray-200">
             <Phone className="w-6 h-6" />
@@ -200,7 +198,6 @@ export default function ManualTab({ isDark, onGenerate }: ManualTabProps) {
           </div>
         </div>
 
-        {/* Professional Summary */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-gray-200">
             <FileText className="w-6 h-6" />
@@ -221,7 +218,6 @@ export default function ManualTab({ isDark, onGenerate }: ManualTabProps) {
           </div>
         </div>
 
-        {/* Career Objective */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-gray-200">
             <Target className="w-6 h-6" />
@@ -242,7 +238,6 @@ export default function ManualTab({ isDark, onGenerate }: ManualTabProps) {
           </div>
         </div>
 
-        {/* Education */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-gray-200">
             <GraduationCap className="w-6 h-6" />
@@ -266,7 +261,6 @@ export default function ManualTab({ isDark, onGenerate }: ManualTabProps) {
           </div>
         </div>
 
-        {/* Skills */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-gray-200">
             <Sparkles className="w-6 h-6" />
@@ -291,7 +285,6 @@ export default function ManualTab({ isDark, onGenerate }: ManualTabProps) {
           </div>
         </div>
 
-        {/* Experience */}
         <div className="space-y-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-gray-200">
             <Briefcase className="w-6 h-6" />

@@ -1,24 +1,25 @@
+
 "use client";
 
 import React from "react";
-import { SessionProvider, useSession } from "next-auth/react";
+import { SessionProvider } from "next-auth/react";
 import { Sidebar, SidebarBody, SidebarLink, useSidebar } from "@/components/ui/sidebar";
 import {
   IconHome,
-  IconDeviceLaptop,
-  IconClipboardCheck,
   IconScoreboard,
-  IconSettings,
   IconLogout,
+  IconLayoutDashboardFilled,
 } from "@tabler/icons-react";
+import { useSession } from "next-auth/react";
+import Particles from "@/components/Particles";
 
-// Extracted Sidebar Component
 const AppSidebar = () => {
   const { open } = useSidebar();
   const { data: session } = useSession();
 
   return (
-    <SidebarBody className="h-screen justify-between overflow-hidden">
+    // Ensure SidebarBody is forced to take full height of the parent
+    <SidebarBody className="h-full justify-between overflow-hidden">
       <div className="flex flex-col gap-8">
         <div className="flex items-center">
           <div className="h-8 w-8 shrink-0 flex items-center justify-center rounded-md bg-purple-600">
@@ -31,14 +32,14 @@ const AppSidebar = () => {
 
         <div className="flex flex-col items-center md:items-start gap-3">
           <SidebarLink link={{ label: "Home", href: "/resume/home", icon: <IconHome className="h-5 w-5 shrink-0" /> }} />
-          <SidebarLink link={{ label: "Mock Test", href: "/trainer/mocktest", icon: <IconClipboardCheck className="h-5 w-5 shrink-0" /> }} />
-          <SidebarLink link={{ label: "AI Interview", href: "/trainer/interview", icon: <IconDeviceLaptop className="h-5 w-5 shrink-0" /> }} />
+          <SidebarLink link={{ label: "Dashboard", href: "/resume/generated-resume", icon: <IconLayoutDashboardFilled className="h-5 w-5 shrink-0" /> }} />
+          <SidebarLink link={{ label: "ATS", href: "/resume/ats", icon: <IconScoreboard className="h-5 w-5 shrink-0" /> }} />
           <SidebarLink link={{ label: "Logout", href: "/api/auth/signout", icon: <IconLogout className="h-5 w-5 shrink-0" /> }} />
         </div>
       </div>
 
       <div className="flex items-center py-3 border-t border-gray-800 min-w-8">
-        <div className="h-8 w-8 shrink-0 flex-none">
+        <div className="h-8 w-8 shrink-0">
           {session?.user?.image ? (
             <img src={session.user.image} className="h-8 w-8 rounded-full border border-purple-500/50" alt="User" />
           ) : (
@@ -55,18 +56,26 @@ const AppSidebar = () => {
   );
 };
 
-export default function TrainerLayout({ children }: { children: React.ReactNode }) {
+export default function ResumeLayout({ children }: { children: React.ReactNode }) {
   return (
     <SessionProvider>
       <Sidebar>
-      <div className="flex min-h-screen bg-transparent">
-        <AppSidebar />
-        <main className="flex-1 flex flex-col">
-          {children}
-        </main>
-      </div>
-    </Sidebar>
+        <div className="fixed inset-0 -z-10 pointer-events-none">
+          <Particles
+            particleColors={["#ffffff"]}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.01}
+            particleBaseSize={100}
+          />
+        </div>
+        <div className="flex h-screen bg-transparent overflow-hidden">
+          <AppSidebar />
+          <div className="flex-1 flex flex-col relative overflow-y-auto">
+            {children}
+          </div>
+        </div>
+      </Sidebar>
     </SessionProvider>
-    
   );
 }
