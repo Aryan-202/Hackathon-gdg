@@ -23,11 +23,12 @@ const AppSidebar = () => {
       <div className="flex flex-col gap-8">
         <div className="flex items-center">
           <div className="h-8 w-8 shrink-0 flex items-center justify-center rounded-md bg-purple-600">
-            <img src="/letter-v.svg" alt="VPlace Logo" className="h-5 w-5" />
+            <a href="/welcome">
+            <img src="/letter-v.svg" alt="VPlace Logo" className="h-5 w-5" /></a>
           </div>
-          <span className={`ml-2 text-lg font-semibold whitespace-nowrap text-white transition-all duration-200 ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+          <a href="/welcome" className={`ml-2 text-lg font-semibold whitespace-nowrap text-white transition-all duration-200 ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
             Vplace
-          </span>
+          </a>
         </div>
 
         <div className="flex flex-col items-center md:items-start gap-3">

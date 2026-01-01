@@ -1,4 +1,3 @@
-// components/Dashboard/Dashboard.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -58,7 +57,6 @@ const Dashboard: React.FC = () => {
       </div>
 
       <div className="flex-1 flex flex-col relative">
-        {/* Purple Glowing Background Orb */}
         <div className="absolute top-40 left-20 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="w-full relative z-10">
