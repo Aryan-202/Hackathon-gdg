@@ -28,8 +28,8 @@ const AuthLandingPage = () => {
   />
   
 </div>
-    <div className="min-h-screen pt-24"> 
-      <AuthNavbar /> {/* Using the Authenticated Navbar here */}
+    <div className="min-h-screen mt-24"> 
+      <AuthNavbar />
       
       <main>
         <Reveal>

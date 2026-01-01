@@ -16,7 +16,7 @@ const trainerFeatures = [
 
 const AIBasedTrainerSection: React.FC = () => {
   return (
-    <section id="AI Trainer" className="relative py-20 px-6 bg-transparent">
+    <section id="AI Trainer" className="relative py-34 px-6 bg-transparent">
       <div className="container mx-auto max-w-7xl">
         
         {/* Vanguard Ghost Header */}
