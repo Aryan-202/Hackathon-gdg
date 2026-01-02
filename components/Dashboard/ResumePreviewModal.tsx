@@ -1,13 +1,20 @@
 "use client";
 
-import React from 'react';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
+
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+
+import "github-markdown-css/github-markdown.css";
+import "highlight.js/styles/github-dark.css";
 
 interface ResumePreviewModalProps {
   open: boolean;
@@ -15,7 +22,11 @@ interface ResumePreviewModalProps {
   markdown: string;
 }
 
-const ResumePreviewModal: React.FC<ResumePreviewModalProps> = ({ open, onClose, markdown }) => {
+const ResumePreviewModal: React.FC<ResumePreviewModalProps> = ({
+  open,
+  onClose,
+  markdown,
+}) => {
   const downloadMarkdown = (content: string) => {
     const blob = new Blob([content], { type: "text/markdown" });
     const url = URL.createObjectURL(blob);
@@ -28,37 +39,43 @@ const ResumePreviewModal: React.FC<ResumePreviewModalProps> = ({ open, onClose, 
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col">
+      <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col bg-background">
         <DialogHeader className="flex flex-row justify-between items-center">
           <DialogTitle>Resume Preview</DialogTitle>
-          <div className="flex gap-3">
-            <Button
-              variant="outline"
-              onClick={() => downloadMarkdown(markdown)}
-              disabled={!markdown}
-            >
-              Download
-            </Button>
-          </div>
+          <Button
+            variant="outline"
+            onClick={() => downloadMarkdown(markdown)}
+            disabled={!markdown}
+          >
+            Download
+          </Button>
         </DialogHeader>
 
-        {/* Modal Content */}
+        {/* Markdown Render */}
         <div className="overflow-y-auto flex-1 pr-2">
           {markdown ? (
-            <div className="prose dark:prose-invert max-w-none">
-              <div dangerouslySetInnerHTML={{
-                __html: markdown
-                  .split('\n')
-                  .map(line => {
-                    if (line.startsWith('# ')) return `<h1 class="text-3xl font-bold mb-2">${line.slice(2)}</h1>`;
-                    if (line.startsWith('## ')) return `<h2 class="text-2xl font-semibold mt-6 mb-3">${line.slice(3)}</h2>`;
-                    if (line.startsWith('### ')) return `<h3 class="text-xl font-semibold mt-4 mb-2">${line.slice(4)}</h3>`;
-                    if (line.startsWith('- ')) return `<li class="ml-6">${line.slice(2)}</li>`;
-                    if (line.startsWith('* ')) return `<li class="ml-6">${line.slice(2)}</li>`;
-                    return line ? `<p class="mb-2">${line}</p>` : '';
-                  })
-                  .join('')
-              }} />
+            <div
+              className="
+                markdown-body
+                max-w-none
+                bg-transparent
+                text-foreground
+                [&_p]:text-foreground
+                [&_li]:text-foreground
+                [&_h1]:text-foreground
+                [&_h2]:text-foreground
+                [&_h3]:text-foreground
+                [&_code]:bg-muted
+                [&_pre]:bg-muted
+                [&_a]:text-purple-400
+              "
+            >
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeHighlight]}
+              >
+                {markdown}
+              </ReactMarkdown>
             </div>
           ) : (
             <div className="flex items-center justify-center h-full text-muted-foreground">
