@@ -11,10 +11,6 @@ import {
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
-
-import "github-markdown-css/github-markdown.css";
-import "highlight.js/styles/github-dark.css";
 
 interface ResumePreviewModalProps {
   open: boolean;
@@ -52,37 +48,45 @@ const ResumePreviewModal: React.FC<ResumePreviewModalProps> = ({
         </DialogHeader>
 
         {/* Markdown Render */}
-        <div className="overflow-y-auto flex-1 pr-2">
-          {markdown ? (
-            <div
-              className="
-                markdown-body
-                max-w-none
-                bg-transparent
-                text-foreground
-                [&_p]:text-foreground
-                [&_li]:text-foreground
-                [&_h1]:text-foreground
-                [&_h2]:text-foreground
-                [&_h3]:text-foreground
-                [&_code]:bg-muted
-                [&_pre]:bg-muted
-                [&_a]:text-purple-400
-              "
-            >
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeHighlight]}
-              >
-                {markdown}
-              </ReactMarkdown>
-            </div>
-          ) : (
-            <div className="flex items-center justify-center h-full text-muted-foreground">
-              <p>No resume to preview</p>
-            </div>
-          )}
-        </div>
+        <div className="overflow-y-auto flex-1 pr-4">
+  {markdown ? (
+    <div
+      className="
+        space-y-4
+        text-sm
+        text-foreground
+
+        [&_h1]:text-3xl
+        [&_h1]:font-bold
+
+        [&_h2]:text-xl
+        [&_h2]:font-semibold
+        [&_h2]:mt-6
+
+        [&_h3]:text-lg
+        [&_h3]:font-semibold
+
+        [&_strong]:font-bold
+        [&_em]:italic
+
+        [&_ul]:list-disc
+        [&_ul]:ml-6
+
+        [&_li]:mb-1
+
+        [&_p]:leading-relaxed
+      "
+    >
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {markdown}
+      </ReactMarkdown>
+    </div>
+  ) : (
+    <div className="flex items-center justify-center h-full text-muted-foreground">
+      <p>No resume to preview</p>
+    </div>
+  )}
+</div>
       </DialogContent>
     </Dialog>
   );
