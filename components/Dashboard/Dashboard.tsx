@@ -76,8 +76,8 @@ const Dashboard: React.FC = () => {
               />
             </div>
           ) : (
-            <div className="max-w-4xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 flex flex-row items-center gap-8 shadow-2xl">
-              <div className="text-left">
+            <div className="w-full min-h-[400px] bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center gap-8 shadow-2xl transition-all duration-300 hover:border-purple-500/40">
+              <div className="text-center max-w-lg">
                 <h3 className="text-2xl font-bold mb-2 text-white">
                   No Resume Found
                 </h3>
@@ -88,7 +88,7 @@ const Dashboard: React.FC = () => {
               </div>
               <a
                 href="/resume/home"
-                className="whitespace-nowrap px-8 py-4 rounded-xl bg-purple-600 text-white font-bold hover:bg-purple-700 transition-all text-center"
+                className="whitespace-nowrap px-8 py-4 rounded-xl bg-purple-600 text-white font-bold hover:bg-purple-700 transition-all text-center shadow-lg shadow-purple-600/20"
               >
                 Generate Resume
               </a>
