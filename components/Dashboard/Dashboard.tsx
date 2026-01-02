@@ -8,6 +8,53 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { ResumeDocument, COLLECTIONS } from "@/lib/resume";
 import Particles from "../Particles";
+const TEST_MD = `
+# SWAYAM SANJAY WAKODIKAR
+
++91 9764433698 | swayam.24bec7056@vitapstudent.ac.in | Hingna, Maharashtra
+
+---
+
+## SUMMARY
+
+Highly motivated and quick-learning student.  
+**Mention your major / field of interest here.**
+
+---
+
+## EDUCATION
+
+**VIT-AP University**, *City, State*  
+Bachelor of Technology in Electronics and Communication Engineering  
+Student ID: 24BEC7056  
+
+**Relevant Coursework:**  
+- Digital Logic Design  
+- Signals and Systems  
+- Embedded Systems  
+- Microprocessors  
+
+**GPA:** 3.6 / 4.0
+
+---
+
+## SKILLS
+
+**Programming Languages**
+- C++
+- Python
+- JavaScript
+
+**Technical Skills**
+- Embedded Systems (ESP32)
+- Verilog
+- Web Development
+
+**Soft Skills**
+- Teamwork
+- Communication
+- Problem Solving
+`;
 
 const Dashboard: React.FC = () => {
   const { data: session, status } = useSession();
