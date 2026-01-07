@@ -87,7 +87,7 @@ Open http://localhost:3000 in your browser to view the application.
 
 ## 👥 Team Members
 ### Swayam Wakodikar – Frontend Developer
-###Krish Patel – UI/UX Designer
+### Krish Patel – UI/UX Designer
 ### Aryan Vishwakarma – Backend Developer
 ### Vedant Harane – Database Administrator
 📄 License
