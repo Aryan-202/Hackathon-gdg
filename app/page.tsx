@@ -46,7 +46,7 @@ const App = () => {
                 role: 'Backend Developer', 
                 contact: 'aryanvishwakarma275@gmail.com', 
                 links: [
-                { name: 'GitHub', url: 'https://github.com/aryanvishwakarma' },
+                { name: 'GitHub', url: 'https://github.com/Aryan-202' },
                 { name: 'Portfolio', url: 'https://welcomearyan.vercel.app' }
                 ]
               },
